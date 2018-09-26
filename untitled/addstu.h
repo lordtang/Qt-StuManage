@@ -20,6 +20,7 @@ private slots:
 
     void on_btn_close_clicked();
 
+
 private:
     Ui::addStu *ui;
 };
