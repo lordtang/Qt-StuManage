@@ -102,7 +102,7 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,4,4">
+       <layout class="QHBoxLayout" name="sexgroup" stretch="1,4,4">
         <item>
          <widget class="QLabel" name="le_">
           <property name="text">
@@ -115,6 +115,9 @@
           <property name="text">
            <string>男</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">sexGroup</string>
+          </attribute>
          </widget>
         </item>
         <item>
@@ -122,6 +125,9 @@
           <property name="text">
            <string>女</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">sexGroup</string>
+          </attribute>
          </widget>
         </item>
        </layout>
@@ -136,7 +142,48 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="cbb_age"/>
+         <widget class="QComboBox" name="cbb_age">
+          <item>
+           <property name="text">
+            <string>16</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>17</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>18</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>19</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>20</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>21</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>22</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>23</string>
+           </property>
+          </item>
+         </widget>
         </item>
         <item>
          <spacer name="horizontalSpacer_2">
@@ -163,7 +210,46 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="cbb_school"/>
+         <widget class="QComboBox" name="cbb_school">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>信息科学与工程学院</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>药学与生物工程</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>体育学院</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>麻省理工学院</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>北京学院</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>清华学院</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>野鸡学院</string>
+           </property>
+          </item>
+         </widget>
         </item>
         <item>
          <spacer name="horizontalSpacer_3">
@@ -198,6 +284,9 @@
               <property name="text">
                <string>篮球</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">insGroup</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -205,6 +294,9 @@
               <property name="text">
                <string>排球</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">insGroup</string>
+              </attribute>
              </widget>
             </item>
            </layout>
@@ -216,6 +308,9 @@
               <property name="text">
                <string>足球</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">insGroup</string>
+              </attribute>
              </widget>
             </item>
             <item>
@@ -223,6 +318,9 @@
               <property name="text">
                <string>羽毛球</string>
               </property>
+              <attribute name="buttonGroup">
+               <string notr="true">insGroup</string>
+              </attribute>
              </widget>
             </item>
            </layout>
@@ -270,4 +368,12 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="sexGroup"/>
+  <buttongroup name="insGroup">
+   <property name="exclusive">
+    <bool>false</bool>
+   </property>
+  </buttongroup>
+ </buttongroups>
 </ui>

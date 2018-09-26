@@ -14,6 +14,7 @@ class addStu : public QDialog
 public:
     explicit addStu(QWidget *parent = nullptr);
     ~addStu();
+    void clearUserInterface();
 
 private slots:
     void on_btn_ok_clicked();

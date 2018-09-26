@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
@@ -38,7 +39,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *id;
     QLineEdit *le_id;
-    QHBoxLayout *horizontalLayout_3;
+    QHBoxLayout *sexgroup;
     QLabel *le_;
     QRadioButton *rbtn_mail;
     QRadioButton *rbtn_fmale;
@@ -63,6 +64,8 @@ public:
     QPushButton *btn_ok;
     QSpacerItem *horizontalSpacer;
     QPushButton *btn_close;
+    QButtonGroup *sexGroup;
+    QButtonGroup *insGroup;
 
     void setupUi(QDialog *addStu)
     {
@@ -137,29 +140,33 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_2);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        sexgroup = new QHBoxLayout();
+        sexgroup->setSpacing(6);
+        sexgroup->setObjectName(QStringLiteral("sexgroup"));
         le_ = new QLabel(widget);
         le_->setObjectName(QStringLiteral("le_"));
 
-        horizontalLayout_3->addWidget(le_);
+        sexgroup->addWidget(le_);
 
         rbtn_mail = new QRadioButton(widget);
+        sexGroup = new QButtonGroup(addStu);
+        sexGroup->setObjectName(QStringLiteral("sexGroup"));
+        sexGroup->addButton(rbtn_mail);
         rbtn_mail->setObjectName(QStringLiteral("rbtn_mail"));
 
-        horizontalLayout_3->addWidget(rbtn_mail);
+        sexgroup->addWidget(rbtn_mail);
 
         rbtn_fmale = new QRadioButton(widget);
+        sexGroup->addButton(rbtn_fmale);
         rbtn_fmale->setObjectName(QStringLiteral("rbtn_fmale"));
 
-        horizontalLayout_3->addWidget(rbtn_fmale);
+        sexgroup->addWidget(rbtn_fmale);
 
-        horizontalLayout_3->setStretch(0, 1);
-        horizontalLayout_3->setStretch(1, 4);
-        horizontalLayout_3->setStretch(2, 4);
+        sexgroup->setStretch(0, 1);
+        sexgroup->setStretch(1, 4);
+        sexgroup->setStretch(2, 4);
 
-        verticalLayout_2->addLayout(horizontalLayout_3);
+        verticalLayout_2->addLayout(sexgroup);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
@@ -170,6 +177,14 @@ public:
         horizontalLayout_4->addWidget(label_5);
 
         cbb_age = new QComboBox(widget);
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
+        cbb_age->addItem(QString());
         cbb_age->setObjectName(QStringLiteral("cbb_age"));
 
         horizontalLayout_4->addWidget(cbb_age);
@@ -193,6 +208,13 @@ public:
         horizontalLayout_5->addWidget(label_6);
 
         cbb_school = new QComboBox(widget);
+        cbb_school->addItem(QString());
+        cbb_school->addItem(QString());
+        cbb_school->addItem(QString());
+        cbb_school->addItem(QString());
+        cbb_school->addItem(QString());
+        cbb_school->addItem(QString());
+        cbb_school->addItem(QString());
         cbb_school->setObjectName(QStringLiteral("cbb_school"));
 
         horizontalLayout_5->addWidget(cbb_school);
@@ -222,11 +244,16 @@ public:
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         checkBox = new QCheckBox(widget);
+        insGroup = new QButtonGroup(addStu);
+        insGroup->setObjectName(QStringLiteral("insGroup"));
+        insGroup->setExclusive(false);
+        insGroup->addButton(checkBox);
         checkBox->setObjectName(QStringLiteral("checkBox"));
 
         horizontalLayout_6->addWidget(checkBox);
 
         checkBox_2 = new QCheckBox(widget);
+        insGroup->addButton(checkBox_2);
         checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
 
         horizontalLayout_6->addWidget(checkBox_2);
@@ -238,11 +265,13 @@ public:
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
         checkBox_3 = new QCheckBox(widget);
+        insGroup->addButton(checkBox_3);
         checkBox_3->setObjectName(QStringLiteral("checkBox_3"));
 
         horizontalLayout_7->addWidget(checkBox_3);
 
         checkBox_4 = new QCheckBox(widget);
+        insGroup->addButton(checkBox_4);
         checkBox_4->setObjectName(QStringLiteral("checkBox_4"));
 
         horizontalLayout_7->addWidget(checkBox_4);
@@ -286,6 +315,9 @@ public:
 
         retranslateUi(addStu);
 
+        cbb_school->setCurrentIndex(0);
+
+
         QMetaObject::connectSlotsByName(addStu);
     } // setupUi
 
@@ -301,7 +333,24 @@ public:
         rbtn_mail->setText(QApplication::translate("addStu", "\347\224\267", nullptr));
         rbtn_fmale->setText(QApplication::translate("addStu", "\345\245\263", nullptr));
         label_5->setText(QApplication::translate("addStu", "\345\271\264\351\276\204\357\274\232", nullptr));
+        cbb_age->setItemText(0, QApplication::translate("addStu", "16", nullptr));
+        cbb_age->setItemText(1, QApplication::translate("addStu", "17", nullptr));
+        cbb_age->setItemText(2, QApplication::translate("addStu", "18", nullptr));
+        cbb_age->setItemText(3, QApplication::translate("addStu", "19", nullptr));
+        cbb_age->setItemText(4, QApplication::translate("addStu", "20", nullptr));
+        cbb_age->setItemText(5, QApplication::translate("addStu", "21", nullptr));
+        cbb_age->setItemText(6, QApplication::translate("addStu", "22", nullptr));
+        cbb_age->setItemText(7, QApplication::translate("addStu", "23", nullptr));
+
         label_6->setText(QApplication::translate("addStu", "\345\255\246\351\231\242\357\274\232", nullptr));
+        cbb_school->setItemText(0, QApplication::translate("addStu", "\344\277\241\346\201\257\347\247\221\345\255\246\344\270\216\345\267\245\347\250\213\345\255\246\351\231\242", nullptr));
+        cbb_school->setItemText(1, QApplication::translate("addStu", "\350\215\257\345\255\246\344\270\216\347\224\237\347\211\251\345\267\245\347\250\213", nullptr));
+        cbb_school->setItemText(2, QApplication::translate("addStu", "\344\275\223\350\202\262\345\255\246\351\231\242", nullptr));
+        cbb_school->setItemText(3, QApplication::translate("addStu", "\351\272\273\347\234\201\347\220\206\345\267\245\345\255\246\351\231\242", nullptr));
+        cbb_school->setItemText(4, QApplication::translate("addStu", "\345\214\227\344\272\254\345\255\246\351\231\242", nullptr));
+        cbb_school->setItemText(5, QApplication::translate("addStu", "\346\270\205\345\215\216\345\255\246\351\231\242", nullptr));
+        cbb_school->setItemText(6, QApplication::translate("addStu", "\351\207\216\351\270\241\345\255\246\351\231\242", nullptr));
+
         label_7->setText(QApplication::translate("addStu", "\345\205\264\350\266\243\357\274\232", nullptr));
         checkBox->setText(QApplication::translate("addStu", "\347\257\256\347\220\203", nullptr));
         checkBox_2->setText(QApplication::translate("addStu", "\346\216\222\347\220\203", nullptr));
