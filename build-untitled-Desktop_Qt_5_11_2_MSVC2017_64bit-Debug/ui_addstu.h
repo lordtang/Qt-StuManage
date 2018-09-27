@@ -357,7 +357,7 @@ public:
         checkBox_3->setText(QApplication::translate("addStu", "\350\266\263\347\220\203", nullptr));
         checkBox_4->setText(QApplication::translate("addStu", "\347\276\275\346\257\233\347\220\203", nullptr));
         btn_ok->setText(QApplication::translate("addStu", "\347\241\256\345\256\232", nullptr));
-        btn_close->setText(QApplication::translate("addStu", "\345\217\226\346\266\210", nullptr));
+        btn_close->setText(QApplication::translate("addStu", "\345\205\263\351\227\255", nullptr));
     } // retranslateUi
 
 };
