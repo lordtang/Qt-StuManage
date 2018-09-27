@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class Ui_addStu
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_3;
     QLabel *le_title;
     QVBoxLayout *verticalLayout_2;
@@ -64,23 +64,23 @@ public:
     QPushButton *btn_ok;
     QSpacerItem *horizontalSpacer;
     QPushButton *btn_close;
-    QButtonGroup *sexGroup;
     QButtonGroup *insGroup;
+    QButtonGroup *sexGroup;
 
     void setupUi(QDialog *addStu)
     {
         if (addStu->objectName().isEmpty())
             addStu->setObjectName(QStringLiteral("addStu"));
         addStu->resize(350, 480);
-        widget = new QWidget(addStu);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(17, 8, 311, 461));
-        verticalLayout_3 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(addStu);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(17, 8, 311, 461));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        le_title = new QLabel(widget);
+        le_title = new QLabel(layoutWidget);
         le_title->setObjectName(QStringLiteral("le_title"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -103,12 +103,12 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        name = new QLabel(widget);
+        name = new QLabel(layoutWidget);
         name->setObjectName(QStringLiteral("name"));
 
         horizontalLayout->addWidget(name);
 
-        le_name = new QLineEdit(widget);
+        le_name = new QLineEdit(layoutWidget);
         le_name->setObjectName(QStringLiteral("le_name"));
         le_name->setEchoMode(QLineEdit::Normal);
         le_name->setClearButtonEnabled(true);
@@ -123,12 +123,12 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        id = new QLabel(widget);
+        id = new QLabel(layoutWidget);
         id->setObjectName(QStringLiteral("id"));
 
         horizontalLayout_2->addWidget(id);
 
-        le_id = new QLineEdit(widget);
+        le_id = new QLineEdit(layoutWidget);
         le_id->setObjectName(QStringLiteral("le_id"));
         le_id->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
         le_id->setClearButtonEnabled(true);
@@ -143,12 +143,12 @@ public:
         sexgroup = new QHBoxLayout();
         sexgroup->setSpacing(6);
         sexgroup->setObjectName(QStringLiteral("sexgroup"));
-        le_ = new QLabel(widget);
+        le_ = new QLabel(layoutWidget);
         le_->setObjectName(QStringLiteral("le_"));
 
         sexgroup->addWidget(le_);
 
-        rbtn_mail = new QRadioButton(widget);
+        rbtn_mail = new QRadioButton(layoutWidget);
         sexGroup = new QButtonGroup(addStu);
         sexGroup->setObjectName(QStringLiteral("sexGroup"));
         sexGroup->addButton(rbtn_mail);
@@ -156,7 +156,7 @@ public:
 
         sexgroup->addWidget(rbtn_mail);
 
-        rbtn_fmale = new QRadioButton(widget);
+        rbtn_fmale = new QRadioButton(layoutWidget);
         sexGroup->addButton(rbtn_fmale);
         rbtn_fmale->setObjectName(QStringLiteral("rbtn_fmale"));
 
@@ -171,12 +171,12 @@ public:
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         horizontalLayout_4->addWidget(label_5);
 
-        cbb_age = new QComboBox(widget);
+        cbb_age = new QComboBox(layoutWidget);
         cbb_age->addItem(QString());
         cbb_age->addItem(QString());
         cbb_age->addItem(QString());
@@ -202,12 +202,12 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         horizontalLayout_5->addWidget(label_6);
 
-        cbb_school = new QComboBox(widget);
+        cbb_school = new QComboBox(layoutWidget);
         cbb_school->addItem(QString());
         cbb_school->addItem(QString());
         cbb_school->addItem(QString());
@@ -232,7 +232,7 @@ public:
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setSpacing(6);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         horizontalLayout_8->addWidget(label_7);
@@ -243,7 +243,7 @@ public:
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        checkBox = new QCheckBox(widget);
+        checkBox = new QCheckBox(layoutWidget);
         insGroup = new QButtonGroup(addStu);
         insGroup->setObjectName(QStringLiteral("insGroup"));
         insGroup->setExclusive(false);
@@ -252,7 +252,7 @@ public:
 
         horizontalLayout_6->addWidget(checkBox);
 
-        checkBox_2 = new QCheckBox(widget);
+        checkBox_2 = new QCheckBox(layoutWidget);
         insGroup->addButton(checkBox_2);
         checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
 
@@ -264,13 +264,13 @@ public:
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        checkBox_3 = new QCheckBox(widget);
+        checkBox_3 = new QCheckBox(layoutWidget);
         insGroup->addButton(checkBox_3);
         checkBox_3->setObjectName(QStringLiteral("checkBox_3"));
 
         horizontalLayout_7->addWidget(checkBox_3);
 
-        checkBox_4 = new QCheckBox(widget);
+        checkBox_4 = new QCheckBox(layoutWidget);
         insGroup->addButton(checkBox_4);
         checkBox_4->setObjectName(QStringLiteral("checkBox_4"));
 
@@ -290,7 +290,7 @@ public:
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        btn_ok = new QPushButton(widget);
+        btn_ok = new QPushButton(layoutWidget);
         btn_ok->setObjectName(QStringLiteral("btn_ok"));
 
         horizontalLayout_9->addWidget(btn_ok);
@@ -299,7 +299,7 @@ public:
 
         horizontalLayout_9->addItem(horizontalSpacer);
 
-        btn_close = new QPushButton(widget);
+        btn_close = new QPushButton(layoutWidget);
         btn_close->setObjectName(QStringLiteral("btn_close"));
 
         horizontalLayout_9->addWidget(btn_close);

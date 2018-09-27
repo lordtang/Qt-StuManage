@@ -15,6 +15,7 @@ public:
     explicit addStu(QWidget *parent = nullptr);
     ~addStu();
     void clearUserInterface();
+    void writeToFile(QString cnt);
 
 private slots:
     void on_btn_ok_clicked();

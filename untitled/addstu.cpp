@@ -7,6 +7,9 @@
 #include <QList>
 #include <QAbstractButton>
 #include <QCheckBox>
+#include <QFile>
+#include <QTextStream>
+#include <QIODevice>
 
 addStu::addStu(QWidget *parent) :
     QDialog(parent),
@@ -28,6 +31,8 @@ void addStu::on_btn_ok_clicked()
     QString age = this->ui->cbb_age->currentText();
     QString dev = this->ui->cbb_school->currentText();
 
+
+
     QList<QAbstractButton *> ins_list = this->ui->insGroup->buttons();
     QString ins;
     int i = 0;
@@ -35,7 +40,7 @@ void addStu::on_btn_ok_clicked()
     {
         QAbstractButton * che = ins_list.at(i);
         if(che->isChecked()){
-            ins+=che->text()+',';
+            ins+=che->text()+" ";
         }
     }
     if(name.length()<=1||id.length()!=12)
@@ -44,10 +49,12 @@ void addStu::on_btn_ok_clicked()
     }else
     {
         QString content = name+'\n'+id+'\n'+age+'\n'+dev+'\n'+sex+'\n'+ins;
+        QString cnt = name+" "+id+" "+sex+" "+age+" "+dev+" "+ins+"\n";
         int ret = QMessageBox::information(this,"are you sure?",content,"确认","取消");
         if(ret ==0)
         {
             clearUserInterface();
+            writeToFile(cnt);
         }
     }
 }
@@ -73,4 +80,18 @@ void addStu::clearUserInterface()
         box->setChecked(false);
     }
 }
+
+void addStu::writeToFile(QString cnt)
+{
+    QFile file("stu.txt");
+    if(! file.open(QIODevice::Append|QIODevice::Text))
+    {
+       QMessageBox::critical(this,"false","fail to save","I know");
+        return;
+    }
+    QTextStream out(&file);
+    out<<cnt;
+    file.close();
+}
+
 

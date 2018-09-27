@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>请填写信息</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>17</x>
@@ -369,11 +369,11 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="sexGroup"/>
   <buttongroup name="insGroup">
    <property name="exclusive">
     <bool>false</bool>
    </property>
   </buttongroup>
+  <buttongroup name="sexGroup"/>
  </buttongroups>
 </ui>

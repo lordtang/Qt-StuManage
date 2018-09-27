@@ -24,13 +24,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        addstu.cpp
+        addstu.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-        addstu.h
+        addstu.h \
+    mainwindow.h
 
 FORMS += \
-        addstu.ui
+        addstu.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
