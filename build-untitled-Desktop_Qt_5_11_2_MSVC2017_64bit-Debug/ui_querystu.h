@@ -18,6 +18,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,27 +26,27 @@ QT_BEGIN_NAMESPACE
 class Ui_QueryStu
 {
 public:
-    QTableView *tableView;
     QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QComboBox *cbb_method;
     QLineEdit *le_cnt;
     QPushButton *btn_search;
+    QTableView *tableView;
 
     void setupUi(QDialog *QueryStu)
     {
         if (QueryStu->objectName().isEmpty())
             QueryStu->setObjectName(QStringLiteral("QueryStu"));
         QueryStu->resize(650, 450);
-        tableView = new QTableView(QueryStu);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(50, 70, 571, 301));
         widget = new QWidget(QueryStu);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(40, 30, 581, 25));
-        horizontalLayout = new QHBoxLayout(widget);
+        widget->setGeometry(QRect(10, 10, 631, 421));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         cbb_method = new QComboBox(widget);
         cbb_method->addItem(QString());
         cbb_method->addItem(QString());
@@ -68,6 +69,14 @@ public:
         horizontalLayout->setStretch(0, 2);
         horizontalLayout->setStretch(1, 6);
         horizontalLayout->setStretch(2, 2);
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        tableView = new QTableView(widget);
+        tableView->setObjectName(QStringLiteral("tableView"));
+
+        verticalLayout->addWidget(tableView);
+
 
         retranslateUi(QueryStu);
 
